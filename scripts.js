@@ -15,7 +15,7 @@ function updateDisplay() {
     const hours = Math.floor(time / 3600000);
     const minutes = Math.floor((time % 3600000) / 60000);
     const seconds = Math.floor((time % 60000) / 1000);
-    display.textContent = ${pad(hours)}:${pad(minutes)}:${pad(seconds)};
+    display.textContent = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
 }
 
 function pad(number) {
@@ -49,7 +49,7 @@ lapBtn.addEventListener('click', () => {
     if (isRunning) {
         const lapTime = display.textContent;
         const lapElement = document.createElement('li');
-        lapElement.textContent = Lap ${lapCounter}: ${lapTime};
+        lapElement.textContent = `Lap ${lapCounter}: ${lapTime}`;
         laps.appendChild(lapElement);
         lapCounter++;
     }
